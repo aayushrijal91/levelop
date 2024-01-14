@@ -10,6 +10,10 @@
     margin-right: auto;
 }
 
+html {
+    overflow-x: hidden;
+}
+
 #banner {
     background: linear-gradient(180deg, rgba(7, 7, 7, 0.80) 0%, rgba(7, 7, 7, 0.00) 100%);
 }
