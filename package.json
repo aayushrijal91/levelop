@@ -1,0 +1,30 @@
+{
+  "name": "roofandgutter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cli": "^2.3.0",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "gulp-terser": "^2.1.0",
+    "jquery": "^3.7.1",
+    "path": "^0.12.7",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.69.5",
+    "slick-carousel": "^1.8.1",
+    "tailwindcss": "^3.3.5",
+    "typed.js": "^2.1.0"
+  },
+  "description": "",
+  "dependencies": {
+    "aos": "^2.3.4"
+  }
+}

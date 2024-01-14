@@ -1,0 +1,229 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; 
+}
+
+.container {
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#banner {
+    background: linear-gradient(180deg, rgba(7, 7, 7, 0.80) 0%, rgba(7, 7, 7, 0.00) 100%);
+}
+
+@media (max-width: 768px) {
+    #banner {
+        background: linear-gradient(90deg, rgba(6, 6, 6, 0.76) 0%, rgba(2, 2, 2, 0.27) 79.05%, rgba(0, 0, 0, 0.00) 100%);
+    }
+}
+
+header {
+    &.scrolled {
+        background: black;
+    }
+}
+
+// The css for gradient in renovation grids
+.renovation-container {
+    height: fit-content; 
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.background-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    z-index: 0;
+    transition: transform 300ms;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom right, black, transparent);
+    opacity: 0.4;
+    transition: opacity 300ms;
+    z-index: 1;
+}
+
+@media (min-width: 768px) {
+    .renovation-container:hover .background-image {
+        transform: scale(1.05);
+    }
+    
+    .renovation-container:hover .gradient-overlay {
+        opacity: 0.7;
+    }
+}
+
+// animated line in about us starts here
+/* Base style for animated lines */
+.animated-line {
+    background: #E0E0E1;
+    position: absolute;
+}
+
+/* Style for the first horizontal line */
+.horizontal-line {
+    height: 2px;
+    width: 0; /* Initial width set to 0 */
+    top: 50%;
+    animation: drawLineHorizontal1 0.5s linear forwards;
+}
+
+/* Style for the vertical line and its pseudo-element for the arc */
+.vertical-line {
+    width: 2px;
+    height: 0; /* Initial height set to 0 */
+    left: 45%;
+    top: 50%;
+    animation: drawLineVertical 0.25s linear forwards 0.5s; /* Delayed by 1s */
+}
+
+/* Style for arc */
+.arc path {
+    stroke-dasharray: 314; 
+    stroke-dashoffset: 314;
+    animation: drawArc 0.25s linear forwards 0.75s; 
+}
+
+/* Style for the second vertical line */
+.vertical-line2 {
+    width: 2px;
+    height: 0; /* Initial height set to 0 */
+    left: calc(45% + 200px); /* Adjust as needed */
+    top: calc(50% + 300px);
+    animation: drawLineVertical2 0.5s linear forwards 1s; /* Starts after 3 seconds */
+}
+
+/* Style for the second horizontal line */
+.horizontal-line-2 {
+    height: 2px;
+    width: 0; /* Initial width set to 0 */
+    left: calc(45% + 200px); /* Adjust to start from the end of the second vertical line */
+    top: calc(50% - 300px); /* Adjust to align with the top of the second vertical line */
+    animation: drawLineHorizontal2 0.5s linear forwards 1.5s; /* Adjust timing as needed */
+}
+
+/* Animation for the horizontal line */
+@keyframes drawLineHorizontal1 {
+    to {
+        width: 45%; /* Or the required length */
+    }
+}
+
+/* Animation for the vertical line */
+@keyframes drawLineVertical {
+    to {
+        height: 300px; 
+    }
+}
+
+/* Animation for the arc */
+@keyframes drawArc {
+    from {
+        stroke-dashoffset: 314;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawLineVertical2 {
+    from {
+        height: 0;
+        top: calc(50% + 300px); /* Starting position */
+    }
+    to {
+        height: 600px;
+        top: calc(50% - 300px); /* Moving up while increasing height */
+    }
+}
+
+/* Animation for the second horizontal line */
+@keyframes drawLineHorizontal2 {
+    to {
+        width: calc(55% - 198px); /* Adjust so it extends to the right edge of the screen */
+    }
+}
+  
+  
+// fade in animation in renovation grids
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100%);
+        opacity: 0; 
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-right {
+    animation: slideInFromRight 0.8s ease-out forwards; 
+}
+
+@keyframes slideInFromTop {
+    0% {
+        transform: translateY(-100%); 
+        opacity: 0; 
+    }
+    100% {
+        transform: translateY(0); 
+        opacity: 1;  
+    }
+}
+
+.slide-in-top {
+    animation: slideInFromTop 0.8s ease-out forwards; 
+}
+
+// slider css
+.item {
+    display: inline-block;
+    margin-right: 20px;
+    width: 535px;
+}
+
+.items {
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+
+.items.active {
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+    transform: scale(1);
+}
+
+@media (max-width: 1024px) {
+    .item {
+        margin-right: 10px;
+        width: 300px;
+    }
+}
+
+// dots in slick
+.slick-dots {
+    margin-top: 30px; 
+}
+
+.slick-dots li button:before {
+    font-size: 30px;
+    color: rgba(128, 128, 128, 0.6); 
+}
+
+.slick-dots li.slick-active button:before {
+    font-size: 35px; 
+    color: #FAFAFA; 
+}
