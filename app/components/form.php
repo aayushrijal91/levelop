@@ -10,9 +10,9 @@ include __DIR__ .'/../function.php';
     $recaptcha = json_decode($recaptcha);
 
     try {
-    //    if ($recaptcha->score < 0.5) {
-    //         throw new Exception('Low Score');
-    //     }
+       if ($recaptcha->score < 0.5) {
+            throw new Exception('Low Score');
+        }
 
         $to = $admin_email;
 

@@ -1254,7 +1254,7 @@
 
                             <!-- Laundry Option -->
                             <label class="flex items-center space-x-2">
-                                <input type="radio" name="room_type" value="Laundry" required>
+                                <input type="radio" name="room-type" value="Laundry" required>
                                 <span>Laundry</span>
                             </label>
                         </div>
